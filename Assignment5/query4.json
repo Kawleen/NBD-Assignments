@@ -1,0 +1,1 @@
+MATCH (h:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(a) RETURN DISTINCT a

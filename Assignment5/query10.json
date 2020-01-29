@@ -1,0 +1,2 @@
+MATCH (m:Movie {title:"Captain America:The First Avenger"})-[*1..4]-(all)
+RETURN DISTINCT all,m

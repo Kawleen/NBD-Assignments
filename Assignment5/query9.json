@@ -1,0 +1,30 @@
+CREATE (CA:Movie {title:'Captain America:The First Avenger', released:2011, tagline:'May the force be with captain'})
+CREATE (ChrisE:Person {name:'Chris Evans', born:1981})
+CREATE (HayleyA:Person {name:'Hayley Atwell', born:1982})
+CREATE (SebastianS:Person {name:'Sebastian Stan', born: 1982})
+CREATE (TommyLJ:Person {name:'Tommy Lee Jones', born:1946})
+CREATE (Hugo:Person {name:'Hugo Weaving', born:1960})
+CREATE (DominicC:Person {name:'Dominic Cooper', born:1978})
+CREATE (RichardA:Person {name:'Richard Armitage', born:1971})
+CREATE (StanleyT:Person {name:'Stanley Tucci', born:1960})
+CREATE (SamuelLJ:Person {name:'Samuel L. Jackson', born:1948})
+CREATE (JJ:Person {name:'Joe Johnston', born:1950})
+CREATE (ChristopherM:Person {name:'Christopher Markus', born:1970})
+CREATE (StephenM:Person {name:'Stephen McFeely', born:1969})
+CREATE (JS:Person {name:'Joe Simon', born:1913})
+CREATE (JK:Person {name:'Jack Kirby', born:1917})
+CREATE
+(ChrisE)-[:ACTED_IN {roles:['Captain America']}]->(CA),
+ (HayleyA)-[:ACTED_IN {roles:['Peggy Carter']}]->(CA),
+ (SebastianS)-[:ACTED_IN {roles:['James Buchanan \'Bucky\' Barnes']}]->(CA),
+(TommyLJ)-[:ACTED_IN {roles:['Colonel Chester Phillips']}]->(CA),
+(Hugo)-[:ACTED_IN {roles:['Red Skull']}]->(CA),
+ (DominicC)-[:ACTED_IN {roles:['Howard Stark']}]->(CA),
+ (RichardA)-[:ACTED_IN {roles:['Heinz Kruger']}]->(CA),
+(StanleyT)-[:ACTED_IN {roles:['Dr. Abraham Erskine']}]->(CA),
+(SamuelLJ)-[:ACTED_IN {roles:['Nick Fury']}]->(CA),
+ (JJ)-[:DIRECTED]->(CA),
+(ChristopherM)-[:WROTE]->(CA),
+(StephenM)-[:WROTE]->(CA),
+(JS)-[:WROTE]->(CA),
+(JK)-[:WROTE]->(CA)

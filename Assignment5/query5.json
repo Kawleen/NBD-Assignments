@@ -1,0 +1,1 @@
+MATCH (m:Movie {title: "The Matrix"})<-[:ACTED_IN]-(a)-[:ACTED_IN]-> (mm) RETURN DISTINCT mm
