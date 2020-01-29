@@ -1,0 +1,1 @@
+printjson(db.ollection.aggregate({$unwind:"$credit"},{$group:{"_id":"$credit.currency",totalAmount:{$sum:{$toDouble:"$credit.balance"}}}}).toArray())

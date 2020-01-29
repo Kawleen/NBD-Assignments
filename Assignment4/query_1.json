@@ -1,0 +1,1 @@
+printjson(db.ollection.aggregate({$group:{"_id":"$sex",averageWeight:{$avg:{$toDouble:"$weight"}}}}).toArray())

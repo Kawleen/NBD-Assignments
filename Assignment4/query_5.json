@@ -1,0 +1,1 @@
+printjson(db.ollection.aggregate({$match:{"sex":"Female","nationality":"Poland"}},{$unwind:"$credit"},{$group:{"_id":"$credit.currency",totalAmount:{$sum:{$toDouble:"$credit.balance"}}}}).toArray())
