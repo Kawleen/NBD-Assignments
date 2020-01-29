@@ -1,0 +1,8 @@
+db.ollection.updateMany(
+   { "first_name": "Antonio" },
+   {
+     $set: { "hobby": "table tennis" }
+   }
+)
+
+printjson(db.ollection.find({"first_name":"Antonio"}).limit(5).toArray())

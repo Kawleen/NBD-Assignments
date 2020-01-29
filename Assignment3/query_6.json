@@ -1,0 +1,28 @@
+db.ollection.insert({
+		"sex" : "Male",
+		"first_name" : "Kawaleen",
+		"last_name" : "Singh",
+		"job" : "Student",
+		"email" : "kawaleen@pjwstk.edu.pl",
+		"location" : {
+			"city" : "Warsaw",
+			"address" : {
+				"streetname" : "Forest",
+				"streetnumber" : "2"
+			}
+		},
+		"description" : "posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis",
+		"height" : "169.99",
+		"weight" : "71.7",
+		"birth_date" : "1994-01-01T13:18:29Z",
+		"nationality" : "India",
+		"credit" : [
+			{
+				"type" : "diners-club-us-ca",
+				"number" : "24142230321577",
+				"currency" : "EUR",
+				"balance" : "8000.27"
+			}]})
+
+
+printjson(db.ollection.find({"first_name":"Kawaleen"}).toArray())

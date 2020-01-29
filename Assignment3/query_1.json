@@ -1,0 +1,1 @@
+printjson(db.ollection.find({},{"first_name":true}).limit(1).toArray())

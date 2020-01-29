@@ -1,0 +1,6 @@
+db.ollection.update(
+   { "job": "Editor" },
+   { $unset: { "email": 1 } }
+)
+
+printjson(db.ollection.find({"job":"Editor"}).limit(5).toArray())

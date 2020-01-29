@@ -1,0 +1,1 @@
+printjson(db.ollection.find({"nationality":"China"}).limit(1).toArray())
