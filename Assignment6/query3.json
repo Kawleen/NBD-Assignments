@@ -1,0 +1,2 @@
+MATCH paths=(t:town {name:"Darjeeling"})-[:twowheeler*]-(place)
+RETURN distinct place

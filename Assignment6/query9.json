@@ -1,0 +1,5 @@
+MATCH (f:Flight) WITH DISTINCT  f.airline AS airline
+MATCH (f1:Flight)-[:ORIGIN]->(a1:Airport),
+(f2:Flight)-[:DESTINATION]->(a2:Airport)
+ WHERE  f1.airline=airline AND f2.airline=airline
+RETURN airline,count(distinct(a1)) AS NumOriginCity,count(distinct(a2)) AS NumDestCity

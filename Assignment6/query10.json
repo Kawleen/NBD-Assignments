@@ -1,0 +1,4 @@
+MATCH paths = (origin:Airport)<-[r:ORIGIN|DESTINATION*4..4]->(destination:Airport)  WHERE  ALL(n IN NODES(paths)  
+WITH  MIN(REDUCE(total = 0, n IN  [f IN NODES(paths)  WHERE  'Flight' IN LABELS(f)]  |  total + reduce(minPrice = 99999, price IN [(n)<-[:ASSIGN]-(ticket) | ticket.price]| CASE WHEN minPrice < price THEN minPrice ELSE price END))) AS totalPrice 
+MATCH path=  (origin:Airport)<-[r:ORIGIN|DESTINATION*4..4]->(destination:Airport) AND REDUCE(total = 0, n IN [ f IN NODES(path)  WHERE  'Flight' IN LABELS(f)] |  total + reduce(minPrice = 99999, price IN [(n)<-[:ASSIGN]-(ticket) | ticket.price]| CASE WHEN minPrice < price THEN minPrice ELSE price END)) =totalPrice
+RETURN  path,totalPrice

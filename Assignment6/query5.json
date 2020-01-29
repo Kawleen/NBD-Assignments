@@ -1,0 +1,4 @@
+MATCH paths = (origin:Airport { name:"LAX" })<-[r:ORIGIN|DESTINATION*1..6]->(destination:Airport) WHERE ALL(n IN NODES(paths
+WITH paths,REDUCE(total = 0, n IN filter(x IN NODES(paths)  WHERE  'Flight' IN LABELS(x)) |  total + reduce(minPrice = 99999, price IN [(n)<-[:ASSIGN]-(ticket) | ticket.price]| CASE WHEN minPrice < price THEN minPrice ELSE price END)
+) AS totalPrice  WHERE  totalPrice< 3000 
+RETURN paths,totalPrice
